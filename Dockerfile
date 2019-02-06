@@ -10,7 +10,5 @@ RUN go build --ldflags '-linkmode "external" -extldflags "-static"' -o shelf ./a
 
 FROM scratch
 COPY --from=0 /go/src/github.com/sashayakovtseva/bookshelf/shelf .
-ENV MONGO_URL localhost
-ENV PORT 8080
-EXPOSE $PORT
+EXPOSE 8080
 CMD ["./shelf"]
