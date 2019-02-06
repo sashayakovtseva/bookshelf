@@ -27,6 +27,7 @@ func main() {
 	}
 
 	var err error
+	log.Printf("Connecting to mongo at %q", mongoURL)
 	DB, err = bookshelf.NewMongoDB(mongoURL)
 	if err != nil {
 		log.Fatal(err)
